@@ -40,5 +40,12 @@ export const styles = StyleSheet.create({
         color: '#03DAC6',
         marginLeft: 'auto',
     },
+    header: {
+        margin: 5,
+        marginLeft: 20,
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#BB86FC'
+    }
 });
 
