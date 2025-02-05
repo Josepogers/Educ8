@@ -1,9 +1,11 @@
 import React from 'react';
-
 import { registerRootComponent } from 'expo';
 import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator()
+
+//screens
 import Home from './src/screens/home/Home.js'
 import { Login } from './src/screens/login/Login.js';
 import { Portugues } from './src/screens/disciplinas/portugues/Portugues..js';
@@ -15,7 +17,6 @@ import { Biologia } from './src/screens/disciplinas/biologia/Biologia.js';
 import { Ingles } from './src/screens/disciplinas/ingles/Ingles.js';
 import { Redacao } from './src/screens/disciplinas/redacao/Redacao.js';
 import { Geografia } from './src/screens/disciplinas/geografia/Geografia.js';
-const Stack = createNativeStackNavigator()
 
 
 export function App() {

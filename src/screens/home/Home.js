@@ -3,8 +3,7 @@ import { Image, View, Text, TouchableOpacity, SafeAreaView, StyleSheet, FlatList
 import { styles } from './style.js'
 import { useNavigation } from '@react-navigation/native';
 const Icon = require('../../assets/images.png')
-// import { Header } from './src/components/Header';
-// import { Modal } from './src/components/Modal';
+
 const Header = () => {
     return (
         <View>
@@ -12,12 +11,12 @@ const Header = () => {
         </View>
     )
 }
-const Home = () => {
-    const { navigate } = useNavigation()
+const Home = ({ navigation }) => {
+
     /*Agora é concatenar na string que vai como paramentro do navigate, inserindo o titulo do item do botao clicado
     */
     const navegar = (title) => {
-        navigate(`${title}`)
+        navigation.navigate(`${title}`)
     }
 
     const Materias = [
@@ -61,11 +60,11 @@ const Home = () => {
         },
     ];
 
-    const Item = ({ title, icon, butao }) => (
+    const Item = ({ title, icon }) => (
         <View style={styles.item}>
             <Image source={icon} style={styles.icon} />
             <Text style={styles.title}>{title}</Text>
-            <TouchableOpacity onPress={() => navegar(`${title}`)}><Text style={styles.b_estudar}>Estudar </Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => navegar(`Portugues`)}><Text style={styles.b_estudar}>Estudar </Text></TouchableOpacity>
         </View>
     );
 
@@ -77,7 +76,6 @@ const Home = () => {
                     data={Materias}
                     renderItem={({ item }) => <Item icon={item.icon} title={item.title} />}
                     keyExtractor={item => item.title}
-
                 />
             </View>
             {/* <Modal /> */}
